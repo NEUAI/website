@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小艾的个人主页</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/stylesheet-0.css">
+</head>
+<body class="bg-light">
+<div class="navbar navbar-expand-lg sticky-top navbar-light bg-light border-bottom justify-content-between">
+    <a class="navbar-brand font-weight-bold" href="/">
+        <img src="/img/favicon.svg" width="30" height="30" class="d-inline-block align-top">
+        小艾的个人主页
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbarCollapse"
+            aria-controls="topNavbarCollapse" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="topNavbarCollapse">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/news/">新闻</a>
+            <a class="nav-item nav-link" href="/articles/">文章</a>
+            <a class="nav-item nav-link" href="/researches/">研究</a>
+            <a class="nav-item nav-link" href="/about-me/">关于我</a>
+            <a class="nav-item nav-link" href="https://0xshare.me/" target="_blank">
+                <img class="d-inline-block align-top" src="/img/0xshare.me.jpg" width="24">
+                式
+            </a>
+            <a class="nav-item nav-link" href="http://www.lueur.cn/" target="_blank">Lueur</a>
+        </div>
+    </div>
+    <!--<form class="form-inline d-none d-lg-block" action="/search/" method="post">
+        <input class="form-control mr-sm-2" type="search" placeholder="搜索" name="search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+    </form>-->
+</div>
+<div class="container-fluid bg-white" style="padding-top: 16px; padding-bottom: 16px;">
+    <div class="container">
+        <!--<div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <strong>重要通知</strong> 新版网站将于北京时间2019年1月1日上线，敬请期待！
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>-->
+        <div id="carouselIndicators" class="carousel slide" data-ride="carousel" style="padding-bottom: 16px;">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+            </ol>
+            <div class="carousel-inner">
+                <a class="carousel-item active" href="#">
+                    <img class="d-block w-100" src="/img/carousel-1.png">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>官宣：新版网站正式上线</h5>
+                        <p>久违了！</p>
+                    </div>
+                </a>
+            </div>
+            <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card border-light">
+                    <div class="card-header font-weight-bold">新闻</div>
+                    <div class="card-body" style="padding: 0;">
+                        <div class="list-group list-group-flush">
+                            <!--<a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex justify-content-between">
+                                    <small>List group item heading</small>
+                                    <small>3 days ago</small>
+                                </div>
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card border-light">
+                    <div class="card-header font-weight-bold">文章</div>
+                    <div class="card-body" style="padding: 0;">
+                        <div class="list-group list-group-flush">
+                            <a href="/articles/4/" class="list-group-item list-group-item-action">
+                                <div class="d-flex justify-content-between">
+                                    <small>在Visual Studio中手动配置Qt项目</small>
+                                    <small>10/15</small>
+                                </div>
+                            </a>
+                            <a href="/articles/3/" class="list-group-item list-group-item-action">
+                                <div class="d-flex justify-content-between">
+                                    <small>如何处理计算机中丢失DLL的系统错误</small>
+                                    <small>10/13</small>
+                                </div>
+                            </a>
+                            <a href="/articles/2/" class="list-group-item list-group-item-action">
+                                <div class="d-flex justify-content-between">
+                                    <small>如何处理xrun错误：活跃开发者工具路径不存在</small>
+                                    <small>10/10</small>
+                                </div>
+                            </a>
+                            <a href="/articles/1/" class="list-group-item list-group-item-action">
+                                <div class="d-flex justify-content-between">
+                                    <small>如何在Windows上安装OpenSSL</small>
+                                    <small>10/09</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card border-light">
+                    <div class="card-header font-weight-bold">研究</div>
+                    <div class="card-body" style="padding: 0;">
+                        <div class="list-group list-group-flush">
+                            <a href="/researches/1/" class="list-group-item list-group-item-action">
+                                <div class="d-flex justify-content-between">
+                                    <small>【项目】基于以太坊区块链应用集成开发环境</small>
+                                    <small>01/01</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-top justify-content-center">
+    <small class="navbar-nav align-items-center">
+        <a class="nav-item nav-link" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">
+            辽ICP备18008623号-1
+        </a>
+        <a class="nav-item nav-link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21011202000299"
+           target="_blank">
+            <img class="d-inline-block align-top" src="/img/ghs.png" width="18">
+            辽公网安备21011202000299号
+        </a>
+    </small>
+</nav>
+<script src="/js/jquery-3.3.1.slim.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
