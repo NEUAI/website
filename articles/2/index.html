@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>如何处理xrun错误：活跃开发者工具路径不存在 - 小艾的个人主页</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/stylesheet-0.css">
+</head>
+<body class="bg-light">
+<div class="navbar navbar-expand-lg sticky-top navbar-light bg-light border-bottom justify-content-between">
+    <a class="navbar-brand font-weight-bold" href="/">
+        <img src="/img/favicon.svg" width="30" height="30" class="d-inline-block align-top">
+        小艾的个人主页
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbarCollapse"
+            aria-controls="topNavbarCollapse" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="topNavbarCollapse">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/news/">新闻</a>
+            <a class="nav-item nav-link active" href="/articles/">文章</a>
+            <a class="nav-item nav-link" href="/researches/">研究</a>
+            <a class="nav-item nav-link" href="/about-me/">关于我</a>
+            <a class="nav-item nav-link" href="https://0xshare.me/" target="_blank">
+                <img class="d-inline-block align-top" src="/img/0xshare.me.jpg" width="24">
+                式
+            </a>
+            <a class="nav-item nav-link" href="http://www.lueur.cn/" target="_blank">Lueur</a>
+        </div>
+    </div>
+    <!--<form class="form-inline d-none d-lg-block" action="/search/" method="post">
+        <input class="form-control mr-sm-2" type="search" placeholder="搜索" name="search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+    </form>-->
+</div>
+<div class="container-fluid bg-white" style="padding-top: 16px; padding-bottom: 16px;">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item"><a href="/articles/">文章</a></li>
+                <li class="breadcrumb-item active" aria-current="page">如何处理xrun错误：活跃开发者工具路径不存在</li>
+            </ol>
+        </nav>
+        <div class="text-dark article">
+            <h1>如何处理xrun错误：活跃开发者工具路径不存在</h1>
+            <p><small>更新时间：2018/10/10 23:30:00 GMT+8</small></p>
+            <h2>背景</h2>
+            <p><strong>macOS Mojave</strong>发布后，本人将<strong>MacBook Pro</strong>从<strong>macOS High Sierra</strong>升级到了新系统，同时也安装了<strong>Xcode</strong>最新版本。但最近在尝试使用git、gcc等命令行程序时，出现了如下所示的错误：</p>
+            <p><code>xcrun: error: active developer path ("/Applications/Xcode.app/Contents/Developer") does not exist, use xcode-select --switch path/to/Xcode.app to specify the Xcode that you wish to use for command line developer tools (or see man xcode-select)</code></p>
+            <p>这个问题导致无法正常使用CLion等常用的集成开发环境，因为这些软件均使用到一些命令行程序。</p>
+            <h2>分析</h2>
+            <p>这是由于macOS或Xcode升级后，Xcode开发者工具的位置发生了变化造成的。</p>
+            <h2>解决方案</h2>
+            <p>在<strong>终端</strong>中运行：<code>sudo xcode-select --reset</code>重置Xcode开发者工具位置即可。</p>
+            <h2>参考文献</h2>
+            <ul>
+                <li><a href="https://stackoverflow.com/questions/35009531/xcrun-error-active-developer-path-applications-xcode-app-contents-developer/">"xcrun: error: active developer path ("/Applications/Xcode.app/Contents/Developer") does not exist - Stack Overflow"</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-top justify-content-center">
+    <small class="navbar-nav align-items-center">
+        <a class="nav-item nav-link" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">
+            辽ICP备18008623号-1
+        </a>
+        <a class="nav-item nav-link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21011202000299"
+           target="_blank">
+            <img class="d-inline-block align-top" src="/img/ghs.png" width="18">
+            辽公网安备21011202000299号
+        </a>
+    </small>
+</nav>
+<script src="/js/jquery-3.3.1.slim.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

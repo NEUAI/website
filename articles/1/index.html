@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>如何在Windows上安装OpenSSL - 小艾的个人主页</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/stylesheet-0.css">
+</head>
+<body class="bg-light">
+<div class="navbar navbar-expand-lg sticky-top navbar-light bg-light border-bottom justify-content-between">
+    <a class="navbar-brand font-weight-bold" href="/">
+        <img src="/img/favicon.svg" width="30" height="30" class="d-inline-block align-top">
+        小艾的个人主页
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbarCollapse"
+            aria-controls="topNavbarCollapse" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="topNavbarCollapse">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/news/">新闻</a>
+            <a class="nav-item nav-link active" href="/articles/">文章</a>
+            <a class="nav-item nav-link" href="/researches/">研究</a>
+            <a class="nav-item nav-link" href="/about-me/">关于我</a>
+            <a class="nav-item nav-link" href="https://0xshare.me/" target="_blank">
+                <img class="d-inline-block align-top" src="/img/0xshare.me.jpg" width="24">
+                式
+            </a>
+            <a class="nav-item nav-link" href="http://www.lueur.cn/" target="_blank">Lueur</a>
+        </div>
+    </div>
+    <!--<form class="form-inline d-none d-lg-block" action="/search/" method="post">
+        <input class="form-control mr-sm-2" type="search" placeholder="搜索" name="search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+    </form>-->
+</div>
+<div class="container-fluid bg-white" style="padding-top: 16px; padding-bottom: 16px;">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item"><a href="/articles/">文章</a></li>
+                <li class="breadcrumb-item active" aria-current="page">如何在Windows上安装OpenSSL</li>
+            </ol>
+        </nav>
+        <div class="text-dark article">
+            <h1>如何在Windows上安装OpenSSL</h1>
+            <p><small>更新时间：2018/10/09 19:00:00 GMT+8</small></p>
+            <h2>准备</h2>
+            <ul>
+                <li>下载并解压<a href="https://www.openssl.org">OpenSSL</a>的源代码（例如：<a href="https://www.openssl.org/source/openssl-1.1.1.tar.gz">1.1.1</a>）。</li>
+                <li>下载并安装<a href="http://strawberryperl.com">Strawberry Perl</a>（例如：<a href="http://strawberryperl.com/download/5.28.0.1/strawberry-perl-5.28.0.1-64bit.msi">5.28.0.1 x64</a>）。</li>
+                <li>下载并安装<a href="https://visualstudio.microsoft.com">Visual Studio 2017</a>（例如：<a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&amp;rel=15">Community</a>）。</li>
+                <li>下载并安装<a href="https://www.nasm.us">NASM</a>（例如：<a href="https://www.nasm.us/pub/nasm/releasebuilds/2.13.03/win64/nasm-2.13.03-installer-x64.exe">2.13.03 x64</a>）。你可能需要手动将NASM的安装路径添加到PATH。</li>
+            </ul>
+            <h2>安装</h2>
+            <ul>
+                <li>在开始菜单以管理员身份运行<strong>VS2017开发者命令行工具</strong>。</li>
+                <li>将当前路径更改到OpenSSL源代码解压到的路径。</li>
+                <li>依次运行下列命令：
+                    <pre><code class="language-powershell" lang="powershell">perl Configure VC-WIN32
+nmake
+nmake test
+nmake install</code></pre></li>
+                <li>将"<strong>C:\Program Files (x86)\OpenSSL\bin</strong>"添加到PATH。</li>
+            </ul>
+            <h2>问题与解决方案</h2>
+            <ul>
+                <li>运行"<code>perl Configure VC-WIN32</code>"时失败。尝试用"<code>perl Configure VC-WIN32 no-asm</code>"替代运行。</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-top justify-content-center">
+    <small class="navbar-nav align-items-center">
+        <a class="nav-item nav-link" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">
+            辽ICP备18008623号-1
+        </a>
+        <a class="nav-item nav-link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21011202000299"
+           target="_blank">
+            <img class="d-inline-block align-top" src="/img/ghs.png" width="18">
+            辽公网安备21011202000299号
+        </a>
+    </small>
+</nav>
+<script src="/js/jquery-3.3.1.slim.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
