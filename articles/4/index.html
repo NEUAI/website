@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在Visual Studio中手动配置Qt项目 - 小艾的个人主页</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/stylesheet-0.css">
+</head>
+<body class="bg-light">
+<div class="navbar navbar-expand-lg sticky-top navbar-light bg-light border-bottom justify-content-between">
+    <a class="navbar-brand font-weight-bold" href="/">
+        <img src="/img/favicon.svg" width="30" height="30" class="d-inline-block align-top">
+        小艾的个人主页
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbarCollapse"
+            aria-controls="topNavbarCollapse" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="topNavbarCollapse">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/news/">新闻</a>
+            <a class="nav-item nav-link active" href="/articles/">文章</a>
+            <a class="nav-item nav-link" href="/researches/">研究</a>
+            <a class="nav-item nav-link" href="/about-me/">关于我</a>
+            <a class="nav-item nav-link" href="https://0xshare.me/" target="_blank">
+                <img class="d-inline-block align-top" src="/img/0xshare.me.jpg" width="24">
+                式
+            </a>
+            <a class="nav-item nav-link" href="http://www.lueur.cn/" target="_blank">Lueur</a>
+        </div>
+    </div>
+    <!--<form class="form-inline d-none d-lg-block" action="/search/" method="post">
+        <input class="form-control mr-sm-2" type="search" placeholder="搜索" name="search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+    </form>-->
+</div>
+<div class="container-fluid bg-white" style="padding-top: 16px; padding-bottom: 16px;">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item"><a href="/articles/">文章</a></li>
+                <li class="breadcrumb-item active" aria-current="page">在Visual Studio中手动配置Qt项目</li>
+            </ol>
+        </nav>
+        <div class="text-dark article">
+            <h1>在Visual Studio中手动配置Qt项目</h1>
+            <p><small>更新时间：2018/10/15 12:00:00 GMT+8</small></p>
+            <h2>先决条件</h2>
+            <ul>
+                <li>安装含有Visual C++组件的Visual Studio。</li>
+                <li>安装Qt库以及适配msvc的工具（如：msvc2017-x64）。</li>
+            </ul>
+            <h2>配置步骤</h2>
+            <p>下面以Visual Studio 2017和Qt 5.11.1为例，详述配置过程。（以下假设Qt的安装位置为D:\Qt，涉及到文件目录的部分请根据实际情况对应进行修改）</p>
+            <ul>
+                <li>打开<strong>Visual Studio 2017</strong>。</li>
+                <li>选择“<strong>文件-新建-项目...</strong>”，选择Visual C++中的“<strong>空项目</strong>”，根据实际情况修改名称（如：QtProjectDemo）和位置。</li>
+                <li>在“<strong>解决方案资源管理器</strong>”中，右键点击“<strong>源文件</strong>”，选择“<strong>添加-新建项...</strong>”，选择Visual C++中的“<strong>C++文件(.cpp)</strong>”，根据实际情况修改名称（如：QtProjectDemo.cpp）；用同样的方法添加一个“<strong>头文件(.h)</strong>”在“<strong>头文件</strong>”中（如：QtProjectDemo.h）。</li>
+                <li>将“<strong>解决方案平台</strong>”修改为“<strong>x64</strong>”。</li>
+                <li>选择“<strong>项目-属性</strong>”，将“<strong>配置属性-常规</strong>”中的“<strong>字符集</strong>”修改为“<strong>使用Unicode字符集</strong>”。</li>
+                <li>将“<strong>配置属性-调试</strong>”中的“<strong>环境</strong>”修改为“<strong>PATH=D:\Qt\5.11.1\msvc2017_64\bin</strong>”。</li>
+                <li>将“<strong>配置属性-C/C++-常规</strong>”中的“<strong>附加包含目录</strong>”修改为“<strong>D:\Qt\5.11.1\msvc2017_64\include;%(AdditionalIncludeDirectories)</strong>”。</li>
+                <li>将“<strong>配置属性-链接器-常规</strong>”中的“<strong>附加库目录</strong>”修改为“<strong>D:\Qt\5.11.1\msvc2017_64\lib;%(AdditionalLibraryDirectories)</strong>”。</li>
+                <li>将“<strong>配置属性-链接器-系统</strong>”中的“<strong>子系统</strong>”修改为“<strong>窗口 (/SUBSYSTEM:WINDOWS)</strong>”。</li>
+                <li>将“<strong>配置属性-链接器-高级</strong>”中的“<strong>入口点</strong>”修改为“<strong>mainCRTStartup</strong>”</li>
+            </ul>
+            <p>至此，配置部分基本上完成了。</p>
+            <h2>使用方式</h2>
+            <ul>
+                <li>需要附加依赖项时，需要使用<code>#pragma comment(lib, "x.lib")</code>语句。如使用<code>#pragma comment(lib, "Qt5Widgets.lib")</code>即代表附加了QtWidgets库。</li>
+                <li>需要包含头文件时，首先需要附加对应的依赖项，然后再使用<code>#include &lt;x.h&gt;</code>语句。如使用<code>#include &lt;QtWidgets/qapplication.h&gt;</code>即包含了QApplication类，但在此之前需要使用<code>#pragma comment(lib, "Qt5Widgets.lib")</code>附加QtWidgets库。</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-top justify-content-center">
+    <small class="navbar-nav align-items-center">
+        <a class="nav-item nav-link" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">
+            辽ICP备18008623号-1
+        </a>
+        <a class="nav-item nav-link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21011202000299"
+           target="_blank">
+            <img class="d-inline-block align-top" src="/img/ghs.png" width="18">
+            辽公网安备21011202000299号
+        </a>
+    </small>
+</nav>
+<script src="/js/jquery-3.3.1.slim.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

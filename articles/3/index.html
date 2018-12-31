@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>如何处理计算机中丢失DLL的系统错误 - 小艾的个人主页</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/stylesheet-0.css">
+</head>
+<body class="bg-light">
+<div class="navbar navbar-expand-lg sticky-top navbar-light bg-light border-bottom justify-content-between">
+    <a class="navbar-brand font-weight-bold" href="/">
+        <img src="/img/favicon.svg" width="30" height="30" class="d-inline-block align-top">
+        小艾的个人主页
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbarCollapse"
+            aria-controls="topNavbarCollapse" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="topNavbarCollapse">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/news/">新闻</a>
+            <a class="nav-item nav-link active" href="/articles/">文章</a>
+            <a class="nav-item nav-link" href="/researches/">研究</a>
+            <a class="nav-item nav-link" href="/about-me/">关于我</a>
+            <a class="nav-item nav-link" href="https://0xshare.me/" target="_blank">
+                <img class="d-inline-block align-top" src="/img/0xshare.me.jpg" width="24">
+                式
+            </a>
+            <a class="nav-item nav-link" href="http://www.lueur.cn/" target="_blank">Lueur</a>
+        </div>
+    </div>
+    <!--<form class="form-inline d-none d-lg-block" action="/search/" method="post">
+        <input class="form-control mr-sm-2" type="search" placeholder="搜索" name="search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+    </form>-->
+</div>
+<div class="container-fluid bg-white" style="padding-top: 16px; padding-bottom: 16px;">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item"><a href="/articles/">文章</a></li>
+                <li class="breadcrumb-item active" aria-current="page">如何处理计算机中丢失DLL的系统错误</li>
+            </ol>
+        </nav>
+        <div class="text-dark article">
+            <h1>如何处理计算机中丢失DLL的系统错误</h1>
+            <p><small>更新时间：2018/10/13 22:30:00 GMT+8</small></p>
+            <h2>背景</h2>
+            <p>在微软Windows操作系统上安装和运行应用程序时，常常会遇到下述格式的系统错误：“<strong>无法启动此程序，因为计算机中丢失xxx.dll。尝试重新安装该程序以解决此问题。</strong>”这意味着系统缺失该应用程序运行所必需的dll，即动态链接库。</p>
+            <h2>分析</h2>
+            <p>碰到这种错误，很多人的第一想法是在百度中搜索该动态链接库的名称，找到百度搜索中提供的某些下载链接来下载。直接这么做是<strong>绝对不提倡</strong>的。因为这样无法保障所下载的dll是源自于官方的，有可能被别有用心的人修改过，植入一些恶意代码，或者所下载的不是最新版本的dll，有可能存在一些安全漏洞，但在官方提供的最新版本中修复了。</p>
+            <p>那么，遇到这种情况应该怎么解决呢？</p>
+            <h2>解决方案</h2>
+            <p>首先可以通过百度了解更多信息，例如该DLL来自于哪家公司的什么组件或应用程序。然后根据缺失的dll的来源不同，我们会有不同的应对方式。</p>
+            <h3>来自微软的DLL</h3>
+            <p>常见的来自微软的DLL，通常以VC/MFC等开头，后缀名前还又可能含有版本号信息，如140、100、71等。</p>
+            <ul>
+                <li><strong>VC开头的DLL一般来自于Visual C++可再发行程序包</strong>，如：VCRUNTIME140.dll等。通过版本号信息可以知道对应的Visual Studio版本：140（VS2017）、130（VS2015）、120（VS2013）、110（VS2012）、100（VS2010）、90（VS2008）、80（VS2005）等。</li>
+                <li><strong>MFC开头的DLL一般来自于多字节MFC库</strong>，如MFC71.dll等。版本信息基本上与VC开头的DLL一致。</li>
+                <li><strong>其他来自微软的DLL</strong>。</li>
+            </ul>
+            <p>缺失这类DLL一定要从微软官方网站上下载对应版本的安装包，此处附上相应的微软支持网页：<a href="https://support.microsoft.com/zh-cn/help/2977003/the-latest-supported-visual-c-downloads">最新支持的Visual C++下载</a>。其他来自微软的DLL可以从微软下载中心进行检索并下载，同样附上网页：<a href="https://www.microsoft.com/zh-cn/download">Microsoft下载中心</a>。</p>
+            <h3>来自第三方的DLL</h3>
+            <p>如果是来自第三方的DLL，也<strong>一定不要</strong>图省事从百度搜索出来的那些所谓的某某下载站来下载。一般来说，DLL的开发公司官方网站上会提供应用程序或组件的下载地址。从官方网站下载的DLL，才能够放心使用，你说对嘛？</p>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-top justify-content-center">
+    <small class="navbar-nav align-items-center">
+        <a class="nav-item nav-link" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">
+            辽ICP备18008623号-1
+        </a>
+        <a class="nav-item nav-link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21011202000299"
+           target="_blank">
+            <img class="d-inline-block align-top" src="/img/ghs.png" width="18">
+            辽公网安备21011202000299号
+        </a>
+    </small>
+</nav>
+<script src="/js/jquery-3.3.1.slim.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
