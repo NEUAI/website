@@ -6,9 +6,10 @@
 !/js
 !/news
 !/researches
-!/search
+!/sitemap
 !/.gitignore
 !/CNAME
 !/favicon.ico
 !/index.html
 !/README.md
+!/sitemap.xml
