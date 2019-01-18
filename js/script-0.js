@@ -1,4 +1,4 @@
-const ANONYM = -1;
+const ANONYMOUS = -1;
 const NEWS = 0;
 const ARTICLES = 1;
 const RESEARCHES = 2;
