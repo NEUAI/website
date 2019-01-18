@@ -1,3 +1,9 @@
+const ANONYM = -1;
+const NEWS = 0;
+const ARTICLES = 1;
+const RESEARCHES = 2;
+const ABOUT_ME = 3;
+
 function loadTopNavbar(activeId) {
     let topNavbarNav = document.getElementById("topNavbarNav");
     let links = [
