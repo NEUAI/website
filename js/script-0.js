@@ -40,6 +40,6 @@ function loadCommonElements() {
         if (links[i].hasOwnProperty("target")) {
             link.setAttribute("target", links[i].target);
         }
-        document.appendChild(link);
+        topNavbarNav.appendChild(link);
     }
 }
