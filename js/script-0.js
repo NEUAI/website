@@ -76,7 +76,6 @@ function loadTopNavbar(activeId) {
 }
 
 function loadBottomNavbar(isHome) {
-    isHome = typeof isHome !== 'undefined'; 
     let bottomNavbarNav = document.getElementById("bottomNavbarNav");
     if (isHome) {
         for (let i = 0; i < LICENSE_LINKS.length; i++) {
@@ -118,7 +117,8 @@ function loadBottomNavbar(isHome) {
     }
 }
 
-function loadCommonElements(activeId) {
+function loadCommonElements(activeId, isHome) {
     loadTopNavbar(activeId);
-    loadBottomNavbar();
+    isHome = typeof isHome !== 'undefined'; 
+    loadBottomNavbar(isHome);
 }
