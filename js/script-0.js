@@ -15,6 +15,9 @@ const TOP_LINKS = [
         "innerHTML": "研究",
         "href": "/researches/"
     }, {
+        "innerHTML": "关注",
+        "href": "/watching/"
+    }, {
         "innerHTML": "关于我",
         "href": "/about-me/"
     }, {
@@ -30,7 +33,7 @@ const TOP_LINKS = [
     }
 ];
 
-const BOTTOM_LINKS = [
+const LICENSE_LINKS = [
     {
         "innerHTML": "辽ICP备18008623号-1",
         "href": "http://www.miitbeian.gov.cn/publish/query/indexFirst.action",
@@ -42,6 +45,8 @@ const BOTTOM_LINKS = [
         "target": "_blank"
     }
 ];
+
+const BOTTOM_LINKS = [];
 
 function loadTopNavbar(activeId) {
     let topNavbarNav = document.getElementById("topNavbarNav");
@@ -69,8 +74,29 @@ function loadTopNavbar(activeId) {
     }
 }
 
-function loadBottomNavbar() {
+function loadBottomNavbar(isHome) {
+    isHome = typeof isHome !== 'undefined'; 
     let bottomNavbarNav = document.getElementById("bottomNavbarNav");
+    if (isHome) {
+        for (let i = 0; i < LICENSE_LINKS.length; i++) {
+            let link = document.createElement("a");
+            if (LICENSE_LINKS[i].hasOwnProperty("imgSrc")) {
+                let img = document.createElement("img");
+                img.setAttribute("class", "d-inline-block align-top");
+                img.setAttribute("src", LICENSE_LINKS[i].imgSrc);
+                img.setAttribute("width", "18");
+                link.appendChild(img);
+                link.innerHTML += " ";
+            }
+            link.innerHTML += LICENSE_LINKS[i].innerHTML;
+            link.setAttribute("class", "nav-item nav-link");
+            link.setAttribute("href", LICENSE_LINKS[i].href);
+            if (LICENSE_LINKS[i].hasOwnProperty("target")) {
+                link.setAttribute("target", LICENSE_LINKS[i].target);
+            }
+            bottomNavbarNav.appendChild(link);
+        }
+    }
     for (let i = 0; i < BOTTOM_LINKS.length; i++) {
         let link = document.createElement("a");
         if (BOTTOM_LINKS[i].hasOwnProperty("imgSrc")) {
