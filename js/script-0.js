@@ -17,7 +17,7 @@ const TOP_LINKS = [
         "href": "/researches/"
     }, {
         "innerHTML": "关注",
-        "href": "/watching/"
+        "href": "/watchings/"
     }, {
         "innerHTML": "关于我",
         "href": "/about-me/"
