@@ -2,7 +2,8 @@ const ANONYMOUS = -1;
 const NEWS = 0;
 const ARTICLES = 1;
 const RESEARCHES = 2;
-const ABOUT_ME = 3;
+const WATCHING = 3;
+const ABOUT_ME = 4;
 
 const TOP_LINKS = [
     {
