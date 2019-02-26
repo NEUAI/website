@@ -131,7 +131,7 @@ function loadBottomNavbar(isHome) {
         }
         link.innerHTML += BOTTOM_LINKS[i].innerHTML;
         if (BOTTOM_LINKS[i].hasOwnProperty("class")) {
-            link.setAttribute("class", BOTTOM_LINKS[i].href);
+            link.setAttribute("class", BOTTOM_LINKS[i].class);
         }
         if (BOTTOM_LINKS[i].hasOwnProperty("href")) {
             link.setAttribute("href", BOTTOM_LINKS[i].href);
