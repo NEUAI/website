@@ -1,0 +1,2 @@
+ErrorDocument 403 /error-docs/403-forbidden/
+ErrorDocument 404 /error-docs/404-not-found/
