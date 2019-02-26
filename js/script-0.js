@@ -7,39 +7,40 @@ const ABOUT_ME = 4;
 
 const TOP_LINKS = [
     {
+        "class": "nav-item nav-link",
         "innerHTML": "新闻",
         "href": "/news/"
     }, {
+        "class": "nav-item nav-link",
         "innerHTML": "文章",
         "href": "/articles/"
     }, {
+        "class": "nav-item nav-link",
         "innerHTML": "研究",
         "href": "/researches/"
     }, {
+        "class": "nav-item nav-link",
         "innerHTML": "关注",
         "href": "/watchings/"
     }, {
+        "class": "nav-item nav-link",
         "innerHTML": "关于我",
         "href": "/about-me/"
-    }, {
-        "imgSrc": "/img/0xshare.me.jpg",
-        "innerHTML": "式",
-        "href": "https://0xshare.me/",
-        "target": "_blank"
-    }, {
-        "imgSrc": "/img/lueur.cn.png",
-        "innerHTML": "Lueur",
-        "href": "http://www.lueur.cn/",
-        "target": "_blank"
     }
 ];
 
 const LICENSE_LINKS = [
     {
+        "class": "nav-item nav-link font-weight-bold",
+        "innerHTML": "备案信息"
+    },
+    {
+        "class": "nav-item nav-link",
         "innerHTML": "辽ICP备18008623号-1",
         "href": "http://www.miitbeian.gov.cn/publish/query/indexFirst.action",
         "target": "_blank"
     }, {
+        "class": "nav-item nav-link",
         "imgSrc": "/img/ghs.png",
         "innerHTML": "辽公网安备21011202000299号",
         "href": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21011202000299",
@@ -47,7 +48,24 @@ const LICENSE_LINKS = [
     }
 ];
 
-const BOTTOM_LINKS = [];
+const BOTTOM_LINKS = [
+    {
+        "class": "nav-item nav-link font-weight-bold",
+        "innerHTML": "友站链接"
+    }, {
+        "class": "nav-item nav-link",
+        "imgSrc": "/img/0xshare.me.jpg",
+        "innerHTML": "式",
+        "href": "https://0xshare.me/",
+        "target": "_blank"
+    }, {
+        "class": "nav-item nav-link",
+        "imgSrc": "/img/lueur.cn.png",
+        "innerHTML": "Lueur",
+        "href": "http://www.lueur.cn/",
+        "target": "_blank"
+    }
+];
 
 function loadTopNavbar(activeId) {
     let topNavbarNav = document.getElementById("topNavbarNav");
@@ -89,8 +107,12 @@ function loadBottomNavbar(isHome) {
                 link.innerHTML += " ";
             }
             link.innerHTML += LICENSE_LINKS[i].innerHTML;
-            link.setAttribute("class", "nav-item nav-link");
-            link.setAttribute("href", LICENSE_LINKS[i].href);
+            if (LICENSE_LINKS[i].hasOwnProperty("class")) {
+                link.setAttribute("class", LICENSE_LINKS[i].class);
+            }
+            if (LICENSE_LINKS[i].hasOwnProperty("href")) {
+                link.setAttribute("href", LICENSE_LINKS[i].href);
+            }
             if (LICENSE_LINKS[i].hasOwnProperty("target")) {
                 link.setAttribute("target", LICENSE_LINKS[i].target);
             }
@@ -108,8 +130,12 @@ function loadBottomNavbar(isHome) {
             link.innerHTML += " ";
         }
         link.innerHTML += BOTTOM_LINKS[i].innerHTML;
-        link.setAttribute("class", "nav-item nav-link");
-        link.setAttribute("href", BOTTOM_LINKS[i].href);
+        if (BOTTOM_LINKS[i].hasOwnProperty("class")) {
+            link.setAttribute("class", BOTTOM_LINKS[i].href);
+        }
+        if (BOTTOM_LINKS[i].hasOwnProperty("href")) {
+            link.setAttribute("href", BOTTOM_LINKS[i].href);
+        }
         if (BOTTOM_LINKS[i].hasOwnProperty("target")) {
             link.setAttribute("target", BOTTOM_LINKS[i].target);
         }
