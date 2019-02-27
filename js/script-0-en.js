@@ -1,32 +1,8 @@
 const ANONYMOUS = -1;
-const NEWS = 0;
-const ARTICLES = 1;
-const RESEARCHES = 2;
-const WATCHING = 3;
-const ABOUT_ME = 4;
+const ABOUT_ME = 0;
 
 const TOP_LINKS = [
     {
-        "class": "nav-item nav-link",
-        "innerHTML": "新闻",
-        "href": "/news/"
-    }, {
-        "class": "nav-item nav-link",
-        "innerHTML": "文章",
-        "href": "/articles/"
-    }, {
-        "class": "nav-item nav-link",
-        "innerHTML": "研究",
-        "href": "/researches/"
-    }, {
-        "class": "nav-item nav-link",
-        "innerHTML": "关注",
-        "href": "/watchings/"
-    }, {
-        "class": "nav-item nav-link",
-        "innerHTML": "关于我",
-        "href": "/about-me/"
-    }, {
         "class": "nav-item nav-link",
         "innerHTML": "About Me",
         "href": "/en/about-me/"
@@ -36,7 +12,7 @@ const TOP_LINKS = [
 const LICENSE_LINKS = [
     {
         "class": "nav-item nav-link font-weight-bold",
-        "innerHTML": "备案信息"
+        "innerHTML": "File Information"
     },
     {
         "class": "nav-item nav-link",
@@ -55,7 +31,7 @@ const LICENSE_LINKS = [
 const BOTTOM_LINKS = [
     {
         "class": "nav-item nav-link font-weight-bold",
-        "innerHTML": "友站链接"
+        "innerHTML": "Blogrolls"
     }, {
         "class": "nav-item nav-link",
         "imgSrc": "/img/0xshare.me.jpg",
